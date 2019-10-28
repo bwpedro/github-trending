@@ -1,3 +1,5 @@
+module.exports = {generateObj, generateUrl};
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios')
@@ -7,25 +9,25 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/get', async (request, response) => {
-  var urlRequest = montaUrl(request.query.lang, request.query.page)
+  var urlRequest = generateUrl(request.query.lang, request.query.page)
 
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   await axios.get(urlRequest)
   .then((result) => {
-    response.json(montaObj(result.data.items));
+    response.json(generateObj(result.data.items));
   })
   .catch((error) => {
     response.json({"Error!": "Could not find"});
   })
 });
 
-function montaUrl(language, page) {
+function generateUrl(language, page) {
   return 'https://api.github.com/search/repositories?q=language:' + language + '&sort=stars&page=' + page;
 }
 
-function montaObj(result) {
+function generateObj(result) {
   arrayResponse = [];
 
   result.forEach(repository => {
