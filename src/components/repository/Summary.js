@@ -4,10 +4,9 @@ const Summary = ({repository}) => {
   return (
     <div className='card z-depth-0 repository-summary'>
       <div className='card-content grey-text text-darken-3'>
-        <span className='card-title'>{repository.name} <img className='avatar' src={repository.owner.avatar_url} alt='avatar'/></span>
+        <span className='card-title hand'><a href={repository.url} target="_blank">{repository.name}</a><img className='avatar' src={repository.avatar} alt='avatar'/></span>
         <p>Forks: {repository.forks}</p>
-        <p>Stars: {repository.stargazers_count}</p>
-        <p className='grey-text'>Description: </p>
+        <p>Stars: {repository.stars}</p>
         <p className='grey-text'>{repository.description}</p>
       </div>
     </div>

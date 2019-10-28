@@ -44,7 +44,7 @@ class Search extends Component {
           <div className="row">
             <div className="col s12 m8">
               <List repositories={repositories}/>
-              <div className='grey-text'><span className='left' onClick={this.handlePrevious}>Previous page</span><span className='right' onClick={this.handleSubmit}> Next page</span></div>
+              <div className='grey-text'><span className='left hand' onClick={this.handlePrevious}>Previous page</span><span className='right hand' onClick={this.handleSubmit}> Next page</span></div>
             </div>
           </div>
         </div>

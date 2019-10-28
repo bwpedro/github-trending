@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="nav-color">
       <div className="container">
         <ul className='left'>
-          <img src={logo} onClick={handleDashboard} className="App-logo" alt="logo" />
+          <img src={logo} onClick={handleDashboard} className="App-logo hand" alt="logo" />
         </ul>
         <ul className='brand-logo'>Github - Most starred repositories</ul>
         <Links/>

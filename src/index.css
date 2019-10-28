@@ -6,8 +6,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: #2A3037;
+}
+
 .nav-color {
   background-color: #23282E;
+}
+
+.hand{
+  cursor: pointer;
 }
 
 .welcome-logo {
